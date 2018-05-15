@@ -26,3 +26,11 @@
        (map load-project)
        (map get-people-from-project)))
 
+(defn writedata [alldata]
+  (with-open [foo (io/writer "/home/amoe/blah.lst")]
+    (doseq [x alldata]
+      (when (not (empty? x))
+        (.write foo (:href (first x)))
+        (.write foo "\n")))))
+
+
