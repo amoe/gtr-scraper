@@ -15,6 +15,6 @@ CREATE TABLE person_project (
 
 CREATE TABLE fund (
     id UUID PRIMARY KEY,
-    funded_id REFERENCES project (id) NOT NULL
+    funded_id UUID REFERENCES project (id) NOT NULL
 );
 

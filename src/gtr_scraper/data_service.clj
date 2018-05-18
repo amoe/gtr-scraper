@@ -17,7 +17,6 @@
 (defn load-json [path]
   (cheshire/parse-string (slurp path) keyword))
 
-
 (defn get-person-sql []
   (->> (get-jsons "/home/amoe/dev/gtr-scraper/data/persons")
        (take 20)
