@@ -96,8 +96,6 @@
           (.write foo (link->uuid (:href link)))
           (.write foo "\n"))))))
 
-
-
 (defn insert-all-projects []
   (doseq [project (get-all-projects)]
     (when project
@@ -105,13 +103,44 @@
         (when (nil? id)
           (println project)
           (throw (ex-info "project id null" {:data project})))
-        (insert-project! database/db-spec {:id (str->uuid (:id project))})
-        (set-up-links-for-project! project)))))
+            (insert-project! database/db-spec {:id (str->uuid (:id project))})
+            (set-up-links-for-project! project)))))
 
-(defn get-all-fund-pages []
+(defn get-all-funds-from-pages []
   (->> (get-exts "/home/amoe/dev/gtr-scraper/data/" ".edn")
-       (take 10)
        (map slurp)
        (map read-string)
        (map :fund)
        (apply concat)))
+
+(defn get-funded [fund]
+  (->> (filter #(= (:rel %) "FUNDED") (get-in fund [:links :link]))
+       first
+       :href
+       link->uuid))
+
+(defn fund->sql [fund]
+  {:id (str->uuid (:id fund))
+   :funded_id (str->uuid (get-funded fund))})
+
+;; handle dangling links
+(defn insert-all-funds []
+  (doseq [fund (get-all-funds-from-pages)]
+    (let [exists? (query-if-project-exists* (get-funded fund))]
+      (when exists?
+        (insert-fund! database/db-spec (fund->sql fund))))))
+
+(defn query-if-project-exists* [string]
+  (-> (query-if-project-exists database/db-spec {:id (str->uuid string)})
+      first
+      :project_exists_p))
+
+;; find broken fund->project links
+(defn write-fund-disjunction []
+  (with-open [foo (io/writer "/home/amoe/project-disjunction.lst")]
+    (doseq [fund (get-all-funds-from-pages)]
+      (let [id (get-funded fund)]
+        (let [exists? (query-if-project-exists* id)]
+          (when-not exists?
+            (.write foo id)
+            (.write foo "\n")))))))
