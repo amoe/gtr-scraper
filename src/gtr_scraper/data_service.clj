@@ -34,7 +34,7 @@
        (map load-json)
        (map person->sql)))
 
-(defn insert-all-persons []
+(defn insert-all-persons! []
   (doseq [person (get-person-sql)]
     (try
       (insert-person! database/db-spec person)
@@ -60,9 +60,11 @@
         (when (nil? id)
           (throw (ex-info "id was nil for" {:data project})))
 
+
         (link-person-to-project! database/db-spec
                                  {:person_id (str->uuid (link->uuid href))
-                                  :project_id (str->uuid id)})))))
+                                  :project_id (str->uuid id)
+                                  :role_code (:rel link)})))))
 
 (defn writedata [alldata]
   (with-open [foo (io/writer "/home/amoe/blah.lst")]
@@ -96,7 +98,7 @@
           (.write foo (link->uuid (:href link)))
           (.write foo "\n"))))))
 
-(defn insert-all-projects []
+(defn insert-all-projects! []
   (doseq [project (get-all-projects)]
     (when project
       (let [id (:id project)]
@@ -123,17 +125,17 @@
   {:id (str->uuid (:id fund))
    :funded_id (str->uuid (get-funded fund))})
 
-;; handle dangling links
-(defn insert-all-funds []
-  (doseq [fund (get-all-funds-from-pages)]
-    (let [exists? (query-if-project-exists* (get-funded fund))]
-      (when exists?
-        (insert-fund! database/db-spec (fund->sql fund))))))
-
 (defn query-if-project-exists* [string]
   (-> (query-if-project-exists database/db-spec {:id (str->uuid string)})
       first
       :project_exists_p))
+
+;; handle dangling links
+(defn insert-all-funds! []
+  (doseq [fund (get-all-funds-from-pages)]
+    (let [exists? (query-if-project-exists* (get-funded fund))]
+      (when exists?
+        (insert-fund! database/db-spec (fund->sql fund))))))
 
 ;; find broken fund->project links
 (defn write-fund-disjunction []

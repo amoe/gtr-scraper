@@ -15,8 +15,8 @@ VALUES (:id);
 -- :name link-person-to-project!
 -- :command :insert
 -- :doc Link a person to a project
-INSERT INTO person_project (person_id, project_id)
-VALUES (:person_id, :project_id);
+INSERT INTO person_project (person_id, project_id, role_code)
+VALUES (:person_id, :project_id, :role_code);
 
 -- :name insert-fund!
 -- :command :insert
