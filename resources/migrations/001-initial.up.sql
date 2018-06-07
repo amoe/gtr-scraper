@@ -10,7 +10,8 @@ CREATE TABLE project (
 
 CREATE TABLE person_project (
     person_id UUID REFERENCES person (id) NOT NULL,
-    project_id UUID REFERENCES project (id) NOT NULL
+    project_id UUID REFERENCES project (id) NOT NULL,
+    role_id INTEGER REFERENCES role (id) NOT NULL
 );
 
 CREATE TABLE fund (
@@ -18,3 +19,18 @@ CREATE TABLE fund (
     funded_id UUID REFERENCES project (id) NOT NULL
 );
 
+
+CREATE TABLE role (
+    code VARCHAR(16) PRIMARY KEY,
+    description VARCHAR(80) NOT NULL
+);
+
+INSERT INTO role (code, description) VALUES ('COI_PER', '');
+INSERT INTO role (code, description) VALUES ('FELLOW_PER', '');
+INSERT INTO role (code, description) VALUES ('PI_PER', '');
+INSERT INTO role (code, description) VALUES ('PM_PER', '');
+INSERT INTO role (code, description) VALUES ('RESEARCH_COI_PER', '');
+INSERT INTO role (code, description) VALUES ('RESEARCH_PER', '');
+INSERT INTO role (code, description) VALUES ('STUDENT_PER', '');
+INSERT INTO role (code, description) VALUES ('SUPER_PER', '');
+INSERT INTO role (code, description) VALUES ('TGH_PER', '');
