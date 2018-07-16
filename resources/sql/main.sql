@@ -33,3 +33,8 @@ SELECT EXISTS(SELECT id FROM person WHERE id = :id) AS person_exists_p;
 -- :command :query
 -- :doc Check if the project exists
 SELECT EXISTS(SELECT id FROM project WHERE id = :id) AS project_exists_p;
+
+-- :name update-gender-for-name!
+-- :command :execute
+-- :doc Update gender for a given name
+UPDATE person SET gender = :gender WHERE first_name = :first_name;

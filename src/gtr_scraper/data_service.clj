@@ -9,6 +9,10 @@
 
 (hugsql/def-db-fns "sql/main.sql")
 
+(defn set-gender-for-first-name [first-name gender]
+  (update-gender-for-name! database/db-spec {:first_name first-name
+                                             :gender gender}))
+
 (defn str->uuid [str]
   (java.util.UUID/fromString str))
 
