@@ -18,7 +18,8 @@ INSERT INTO project_role (code, description) VALUES ('TGH_PER', '');
 CREATE TABLE person (
     id UUID PRIMARY KEY,
     first_name VARCHAR(80) NOT NULL,
-    last_name VARCHAR(80) NOT NULL
+    last_name VARCHAR(80) NOT NULL,
+    gender VARCHAR(8) NULL
 );
 
 CREATE TABLE project (
@@ -33,7 +34,8 @@ CREATE TABLE person_project (
 
 CREATE TABLE fund (
     id UUID PRIMARY KEY,
-    funded_id UUID REFERENCES project (id) NOT NULL
+    funded_id UUID REFERENCES project (id) NOT NULL,
+    value_pounds NUMERIC(19, 4) NOT NULL
 );
 
 

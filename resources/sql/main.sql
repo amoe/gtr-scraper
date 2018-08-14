@@ -3,8 +3,8 @@
 -- :name insert-person!
 -- :command :insert
 -- :doc Insert a person
-INSERT INTO person (id, first_name, last_name)
-VALUES (:id, :first_name, :last_name);
+INSERT INTO person (id, first_name, last_name, gender)
+VALUES (:id, :first_name, :last_name, :gender);
 
 -- :name insert-project!
 -- :command :insert
@@ -21,8 +21,8 @@ VALUES (:person_id, :project_id, :role_code);
 -- :name insert-fund!
 -- :command :insert
 -- :doc Insert a fund
-INSERT INTO fund (id, funded_id)
-VALUES (:id, :funded_id);
+INSERT INTO fund (id, funded_id, value_pounds)
+VALUES (:id, :funded_id, :value_pounds);
 
 -- :name query-if-person-exists
 -- :command :query

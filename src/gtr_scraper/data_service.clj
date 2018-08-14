@@ -4,6 +4,7 @@
             [clojure.string :as string]
             [gtr-scraper.projects :as projects]
             [gtr-scraper.database :as database]
+            [gtr-scraper.gender-data :as gender-data]
             [cheshire.core :as cheshire]
             [clojure.java.io :as io]))
 
@@ -25,25 +26,28 @@
 (defn load-json [path]
   (cheshire/parse-string (slurp path) keyword))
 
-(defn person->sql [datum]
-  (try
-    {:id (str->uuid (:id datum))
-     :first_name (:firstName datum)
-     :last_name (:surname datum)}
-    (catch Exception e
-      (println "failed to convert a person" datum))))
+(defn person->sql [datum gender-lookup]
+  (let [first-name (:firstName datum)]
+    (try
+      {:id (str->uuid (:id datum))
+       :first_name (:firstName datum)
+       :last_name (:surname datum)
+       :gender (get gender-lookup first-name)}
+      (catch Exception e
+        (println "failed to convert a person" datum)))))
 
 (defn get-person-sql []
-  (->> (get-jsons "/home/amoe/dev/gtr-scraper/data/persons")
-       (map load-json)
-       (map person->sql)))
+  (let [gender-lookup (gender-data/get-gender-data)]
+    (->> (get-jsons "/home/amoe/dev/gtr-scraper/data/persons")
+         (map load-json)
+         (map #(person->sql % gender-lookup)))))
 
 (defn insert-all-persons! []
   (doseq [person (get-person-sql)]
     (try
       (insert-person! database/db-spec person)
       (catch Exception e
-        (println "this person failed" person)))))
+        (println "this person failed" person e)))))
 
 (defn project->sql [datum]
   {:id (str->uuid (:id datum))})
@@ -127,7 +131,8 @@
 
 (defn fund->sql [fund]
   {:id (str->uuid (:id fund))
-   :funded_id (str->uuid (get-funded fund))})
+   :funded_id (str->uuid (get-funded fund))
+   :value_pounds (-> fund :valuePounds :amount)})
 
 (defn query-if-project-exists* [string]
   (-> (query-if-project-exists database/db-spec {:id (str->uuid string)})
@@ -152,3 +157,7 @@
             (.write foo "\n")))))))
 
 
+(defn do-full-import! []
+  (insert-all-persons!)
+  (insert-all-projects!)
+  (insert-all-funds!))
