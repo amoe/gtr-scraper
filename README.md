@@ -2,7 +2,7 @@
 
 ## Import data
 
-First, run the migrations.  `lein run migrate`
+First, run the migrations: `lein migrate`
 
 You need to import the data in dependency order.
 
