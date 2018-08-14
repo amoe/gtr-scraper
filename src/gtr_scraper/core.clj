@@ -90,12 +90,15 @@
   (map get-funds-page (range 1 824)))
 ;(filter #(= (:rel %) "FUNDED")
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
+(defn unknown-function []
   (doseq [x  (stupid-project-scraper)]
     (let [funds (:fund x)]
       (doseq [fund funds]
         (let [all-links (get-in fund [:links :link])]
           (println (:href (first (filter #(= (:rel %) "FUNDED") all-links)))))))))
+
+(defn -main
+  "I don't do a whole lot ... yet."
+  [& args]
+  (println "Yow!"))
 
