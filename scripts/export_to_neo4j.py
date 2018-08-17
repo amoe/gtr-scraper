@@ -32,7 +32,7 @@ QUERY_PERSONS = """
 """
 
 QUERY_PROJECTS = """
-    SELECT p.id
+    SELECT p.id, p.created_date, p.title
     FROM project p;
 """
 
