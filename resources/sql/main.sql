@@ -9,8 +9,8 @@ VALUES (:id, :first_name, :last_name, :gender);
 -- :name insert-project!
 -- :command :insert
 -- :doc Insert a project
-INSERT INTO project (id)
-VALUES (:id);
+INSERT INTO project (id, created_date, title, abstract)
+VALUES (:id, :created_date, :title, :abstract);
 
 -- :name link-person-to-project!
 -- :command :insert

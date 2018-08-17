@@ -23,7 +23,10 @@ CREATE TABLE person (
 );
 
 CREATE TABLE project (
-    id UUID PRIMARY KEY    
+    id UUID PRIMARY KEY,
+    created_date TIMESTAMP WITH TIME ZONE NOT NULL,
+    title TEXT NOT NULL,
+    abstract TEXT NOT NULL
 );
 
 CREATE TABLE person_project (

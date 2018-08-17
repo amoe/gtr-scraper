@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [cheshire "5.8.0"]
                  [clj-http "3.9.0"]
+                 [clj-time "0.14.4"]
                  [ragtime "0.7.2"]
                  [fipp "0.6.12"]
                  [org.postgresql/postgresql "9.4.1208.jre7"]

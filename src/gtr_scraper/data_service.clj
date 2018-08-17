@@ -2,6 +2,7 @@
   (:require [hugsql.core :as hugsql]
             [clojure.pprint :as pprint]
             [clojure.string :as string]
+            [clj-time.coerce :as c]
             [gtr-scraper.projects :as projects]
             [gtr-scraper.database :as database]
             [gtr-scraper.gender-data :as gender-data]
@@ -49,8 +50,21 @@
       (catch Exception e
         (println "this person failed" person e)))))
 
+
+(defn domain-timestamp-to-sql-timestamp [dt]
+  (c/to-sql-time dt))
+
+(defn long-epoch-time-to-datetime [et]
+  (c/from-long et))
+
 (defn project->sql [datum]
-  {:id (str->uuid (:id datum))})
+  {:id (str->uuid (:id datum))
+   :created_date (-> datum
+                     :created
+                     long-epoch-time-to-datetime
+                     domain-timestamp-to-sql-timestamp)
+   :title (:title datum)
+   :abstract (:abstractText datum)})
 
 ;; munge the data off the end
 (defn link->uuid [url]
@@ -113,7 +127,7 @@
         (when (nil? id)
           (println project)
           (throw (ex-info "project id null" {:data project})))
-            (insert-project! database/db-spec {:id (str->uuid (:id project))})
+            (insert-project! database/db-spec (project->sql project))
             (set-up-links-for-project! project)))))
 
 (defn get-all-funds-from-pages []
