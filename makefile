@@ -1,3 +1,6 @@
+import_data:
+	lein run -m gtr-scraper.data-service/do-full-import!
+
 reset_database:
 	-sudo sudo -u postgres dropdb gtr
 	-sudo puppet agent --test

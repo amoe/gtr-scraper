@@ -16,7 +16,10 @@ POSTGRESQL_USER = 'gtr'
 POSTGRESQL_PASSWORD = 'jz3KTupRvDzf9Io1'
 
 pg_conn = psycopg2.connect(
-    host=POSTGRESQL_HOSTNAME, dbname=POSTGRESQL_DATABASE, user=POSTGRESQL_USER, password=POSTGRESQL_PASSWORD,
+    host=POSTGRESQL_HOSTNAME,
+    dbname=POSTGRESQL_DATABASE,
+    user=POSTGRESQL_USER,
+    password=POSTGRESQL_PASSWORD,
     cursor_factory=psycopg2.extras.DictCursor
 )
 cur = pg_conn.cursor()
