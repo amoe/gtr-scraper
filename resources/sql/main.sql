@@ -21,8 +21,8 @@ VALUES (:person_id, :project_id, :role_code);
 -- :name insert-fund!
 -- :command :insert
 -- :doc Insert a fund
-INSERT INTO fund (id, funded_id, value_pounds)
-VALUES (:id, :funded_id, :value_pounds);
+INSERT INTO fund (id, funded_id, value_pounds, start_date, end_date)
+VALUES (:id, :funded_id, :value_pounds, :start_date, :end_date);
 
 -- :name query-if-person-exists
 -- :command :query

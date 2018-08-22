@@ -146,7 +146,15 @@
 (defn fund->sql [fund]
   {:id (str->uuid (:id fund))
    :funded_id (str->uuid (get-funded fund))
-   :value_pounds (-> fund :valuePounds :amount)})
+   :value_pounds (-> fund :valuePounds :amount)
+   :start_date (-> fund
+                   :start
+                   long-epoch-time-to-datetime
+                   domain-timestamp-to-sql-timestamp)
+   :end_date (-> fund
+                 :end
+                 long-epoch-time-to-datetime
+                 domain-timestamp-to-sql-timestamp)})
 
 (defn query-if-project-exists* [string]
   (-> (query-if-project-exists database/db-spec {:id (str->uuid string)})

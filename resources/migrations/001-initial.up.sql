@@ -38,7 +38,9 @@ CREATE TABLE person_project (
 CREATE TABLE fund (
     id UUID PRIMARY KEY,
     funded_id UUID REFERENCES project (id) NOT NULL,
-    value_pounds NUMERIC(19, 4) NOT NULL
+    value_pounds NUMERIC(19, 4) NOT NULL,
+    start_date TIMESTAMP WITH TIME ZONE NOT NULL,
+    end_date TIMESTAMP WITH TIME ZONE NOT NULL
 );
 
 
