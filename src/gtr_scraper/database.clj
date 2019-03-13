@@ -6,7 +6,7 @@
   {:subprotocol "postgresql"
    :subname "//localhost/gtr"
    :user "gtr"
-   :password "jz3KTupRvDzf9Io1"})
+   :password "xyzzy"})
 
 (defn load-config []
   {:datastore  (jdbc/sql-database db-spec)

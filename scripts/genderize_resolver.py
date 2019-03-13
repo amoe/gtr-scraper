@@ -5,7 +5,7 @@ import subprocess
 
 API_KEY = "274e3c4e55e2c9aef8bdf0c659e5cbc9"
 
-conn = psycopg2.connect(host='localhost', dbname='gtr', user='gtr', password='jz3KTupRvDzf9Io1')
+conn = psycopg2.connect(host='localhost', dbname='gtr', user='gtr', password='xyzzy')
 
 cur = conn.cursor()
 

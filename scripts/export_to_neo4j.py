@@ -13,7 +13,7 @@ NEO4J_PASSWORD = 'password'
 POSTGRESQL_HOSTNAME = 'localhost'
 POSTGRESQL_DATABASE = 'gtr'
 POSTGRESQL_USER = 'gtr'
-POSTGRESQL_PASSWORD = 'jz3KTupRvDzf9Io1'
+POSTGRESQL_PASSWORD = 'xyzzy'
 
 pg_conn = psycopg2.connect(
     host=POSTGRESQL_HOSTNAME,

@@ -4,7 +4,9 @@
 import psycopg2
 import subprocess
 
-conn = psycopg2.connect(host='localhost', dbname='gtr', user='gtr', password='jz3KTupRvDzf9Io1')
+conn = psycopg2.connect(
+   host='localhost', dbname='gtr', user='gtr', password='xyzzy'
+)
 
 cur = conn.cursor()
 
