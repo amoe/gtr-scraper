@@ -9,7 +9,6 @@
 
 (def funds-per-page 100)
 
-
 (defn get-total-pages []
   (-> (client/get "http://gtr.ukri.org/gtr/api/funds" {:as :json
                                                        :accept :json
@@ -96,9 +95,3 @@
       (doseq [fund funds]
         (let [all-links (get-in fund [:links :link])]
           (println (:href (first (filter #(= (:rel %) "FUNDED") all-links)))))))))
-
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Yow!"))
-

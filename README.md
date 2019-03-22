@@ -28,7 +28,6 @@ Also you need to run the database migrations with lein migrate.
     WHERE pr.created_date > date("2017-01-01")
     RETURN pr, pe;
 
-
 ## Authentication
 
 Run this command to see what files need the real authentication details.
