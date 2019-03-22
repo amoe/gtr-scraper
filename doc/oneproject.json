@@ -1,0 +1,138 @@
+{
+    "links": {
+        "link": [
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/persons/6035A6F6-9426-46D1-AB66-81DCE22513C0",
+                "rel": "PI_PER",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/persons/27506E01-0D8D-43CD-9B35-A5680D0CBF0C",
+                "rel": "COI_PER",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/organisations/ED6A6B32-663C-4A62-A33B-2C6A68E2E102",
+                "rel": "LEAD_ORG",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/funds/0A043451-622E-4349-82F0-88B65CD4E565",
+                "rel": "FUND",
+                "start": 1141171200000,
+                "end": 1167523200000,
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/keyfindings/776ED866-E12D-4026-B238-37E33B48E1EA",
+                "rel": "KEY_FINDING",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/disseminations/BD030FF0-4953-409F-9777-F177C3C962FE",
+                "rel": "DISSEMINATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/impactsummaries/0453A799-0E41-4145-8BC7-59F74C20C990",
+                "rel": "IMPACT_SUMMARY",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/BF665282-1CD4-4F38-83EF-7B35E6AB46D9",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/79792F75-29CC-4D63-8860-A2EBAA722F99",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/065D7B73-2F44-4251-B50D-F034EEB1F16E",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/68070AE4-DEC3-4355-8214-BBAF34256B25",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/0311E790-C287-4F6F-B009-C1EE0D72FE2C",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/F533F2B7-0BFD-435D-8E0F-262524489259",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/DAF9647F-CD2E-4D8B-8F4D-B268DF23F927",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/1A493A96-47D2-4905-BFE7-DAC1EBA43DAA",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/91926634-7ED2-4CBA-BBD0-D1F2D7370E4A",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/outcomes/publications/33346C41-C658-4463-A6C1-A15886D6B7BF",
+                "rel": "PUBLICATION",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/projects/7FF4598D-C2DE-4BB9-8441-9D3A45D15524",
+                "rel": "TRANSFER",
+                "start": 1167609600000,
+                "end": 1235779200000,
+                "otherAttributes": {}
+            }
+        ]
+    },
+    "id": "15368057-4FF4-4C04-BB6C-19A72F257ECD",
+    "href": "http://gtr.ukri.org:80/gtr/api/projects/15368057-4FF4-4C04-BB6C-19A72F257ECD",
+    "created": 1525197342000,
+    "identifiers": {
+        "identifier": [
+            {
+                "value": "BB/D006295/1",
+                "type": "RCUK"
+            }
+        ]
+    },
+    "title": "Activation of transcription factor nrf2 by isothiocyanates and prevention of cellular senescence in vitro",
+    "status": "Closed",
+    "grantCategory": "Research Grant",
+    "leadFunder": "BBSRC",
+    "leadOrganisationDepartment": "Biological Sciences",
+    "abstractText": "Growing old takes a continuing toll on our skin, tissues and general health. An understanding of the ageing process and appropriate drugs or nutritional supplements to slow the process down may help us be healthier in old age. Spontaneous damage to proteins and DNA accumulates in cells during their life and contributes to the ageing effects. This can probably be resisted by increasing the activity of enzymes that protect proteins and DNA from damage. One such enzyme is glyoxalase I (GLO1). GLO1 protects proteins and DNA directly against damage from reactive sugar-derived molecules and protects indirectly against oxidative damage and impairment of cell respiration. Increasing the amount of GLO1, by overexpression of the gene for GLO1 in experimental conditions, has recently been shown to produce a 40% increase in lifespan of a small worm (nematode) commonly used as an experimental model of ageing. I have recently found that GLO1 can also be increased by compounds absorbed from Brassica vegetables such as cabbage, broccoli and others. These compounds, isothiocyanates, activate processes that affect the regulation of the GLO1 gene. I think it highly likely that isothiocyanates may slow the ageing process by increasing GLO1 expression / with probably also other effects. To test this, in this project I will use a human cell culture model of ageing. I will test if overexpression of GLO1 achieved by genetic techniques prevents ageing of human cells / measuring the expected decrease in damage to protein and DNA. I will then see and if this can also be achieved by induction of GLO1 gene expression by isothiocyanates. A successful outcome will give the first suggestions that eating your greens may slow the ageing process.",
+    "techAbstractText": "Proteins suffer spontaneous damage by glycation, oxidation and nitration leading to the formation of protein glycation, oxidation and nitration adducts. Nucleotides also suffer analogous damage. These adducts accumulate in the ageing process as a consequence of both increased formation and decreased removal and repair. Recent progress in experimental models of ageing has indicated that related functional impairment is key to the ageing process. A strategy to slow this process is to enhance the endogenous protection against cellular damage. Well-tolerated chemical interventions that achieve this may suppress the ageing process without long-term safety concerns. The possibility to achieve an anti-ageing effect with chemical intervention has arisen from the observations that dietary isothiocyanates (ITCs) induced antioxidant response element (ARE)-linked gene expression via the transcription factor nrf2. In this project, I will examine if the induction of ARE-linked gene expression by ITCs will prevent cellular senescence of human fibroblasts in vitro and show that in so doing damage to proteins and DNA is prevented. A successful outcome will show how simple chemical intervention with nrf2 activators can delay cell senescence.",
+    "healthCategories": {
+        "healthCategory": []
+    },
+    "researchActivities": {
+        "researchActivity": []
+    },
+    "researchSubjects": {
+        "researchSubject": []
+    },
+    "researchTopics": {
+        "researchTopic": [
+            {
+                "id": "D05BC2E0-0345-4A3F-8C3F-775BC42A0819",
+                "text": "Unclassified"
+            }
+        ]
+    },
+    "rcukProgrammes": {
+        "rcukProgramme": []
+    }
+}

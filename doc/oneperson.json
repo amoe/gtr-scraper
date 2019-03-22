@@ -1,0 +1,22 @@
+{
+    "links": {
+        "link": [
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/projects/0A738E1E-1CD0-49BB-AC78-823A9FDCCE91",
+                "rel": "RESEARCH_PER",
+                "otherAttributes": {}
+            },
+            {
+                "href": "http://gtr.ukri.org:80/gtr/api/organisations/A0A585E0-6B0D-4643-A3A6-47943B4CBFEF",
+                "rel": "EMPLOYED",
+                "otherAttributes": {}
+            }
+        ]
+    },
+    "id": "25FF2D4A-478F-4982-B055-DE3622C41E4A",
+    "href": "http://gtr.ukri.org:80/gtr/api/persons/25FF2D4A-478F-4982-B055-DE3622C41E4A",
+    "created": 1525197344000,
+    "firstName": "Stephen",
+    "otherNames": "Wynford",
+    "surname": "Jones"
+}

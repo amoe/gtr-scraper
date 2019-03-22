@@ -1,0 +1,30 @@
+{
+    "category": "INCOME_ACTUAL",
+    "valuePounds": {
+        "amount": 198408,
+        "currencyCode": "GBP"
+    },
+    "start": 1441062000000,
+    "created": 1524673287000,
+    "id": "3F1F0F7B-6661-4EE8-8F8F-DED1F487719D",
+    "end": 1504134000000,
+    "href": "http://gtr.ukri.org:80/gtr/api/funds/3F1F0F7B-6661-4EE8-8F8F-DED1F487719D",
+    "links": {
+        "link": [
+            {
+                "rel": "FUNDER",
+                "start": 1441062000000,
+                "otherAttributes": {},
+                "end": 1504134000000,
+                "href": "http://gtr.ukri.org:80/gtr/api/organisations/C008C651-F5B0-4859-A334-5F574AB6B57C"
+            },
+            {
+                "rel": "FUNDED",
+                "start": 1441062000000,
+                "otherAttributes": {},
+                "end": 1504134000000,
+                "href": "http://gtr.ukri.org:80/gtr/api/projects/E135D5F6-A017-460B-AB08-7B841DE8A834"
+            }
+        ]
+    }
+}
