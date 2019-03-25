@@ -81,9 +81,6 @@
                         get-person-names-in-project)]
       {:value (:valuePounds project)
        :names name-set})))
-       
-      
-
 
 (defn scrape-funds []
   (map get-funds-page (range 1 824)))
