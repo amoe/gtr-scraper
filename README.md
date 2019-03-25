@@ -20,6 +20,13 @@ Also you need to run the database migrations with lein migrate.
 
 These processes are encapsulated in the Makefile tasks.
 
+## Specifying the database password
+
+Specify the database password in your local `profiles.clj` file (within the root
+of this repository).  It should look something like this:
+
+    {:dev {:env {:database-password "xyzzy"}}}
+
 ## Mirroring the PostgreSQL graph to Neo4j
 
     python3 scripts/export_to_neo4j.py
