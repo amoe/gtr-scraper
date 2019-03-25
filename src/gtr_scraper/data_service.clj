@@ -180,6 +180,9 @@
 
 
 (defn do-full-import! []
+  (println "Importing entity: person.")
   (insert-all-persons!)
+  (println "Importing entity: project.")
   (insert-all-projects!)
+  (println "Importing entity: fund.")
   (insert-all-funds!))

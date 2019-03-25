@@ -31,6 +31,9 @@ of this repository).  It should look something like this:
 
     python3 scripts/export_to_neo4j.py
 
+For some reason this is in Python, although it should probably also be in
+Clojure; then we wouldn't have to specify the authentication details twice.
+
 ## Querying graph
 
     MATCH (pr:Project)<-[:PARTICIPATED_IN]-(pe:Person)
