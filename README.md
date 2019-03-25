@@ -18,6 +18,8 @@ Also you need to run the database migrations with lein migrate.
 * (insert-all-projects!)
 * (insert-all-funds!)
 
+These processes are encapsulated in the Makefile tasks.
+
 ## Mirroring the PostgreSQL graph to Neo4j
 
     python3 scripts/export_to_neo4j.py
