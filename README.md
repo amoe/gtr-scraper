@@ -47,3 +47,6 @@ Run this command to see what files need the real authentication details.
     grep -lr xyzzy .
 
 The real details are found in the `gtr.pp` Puppet manifest.
+
+
+Yow! x1
