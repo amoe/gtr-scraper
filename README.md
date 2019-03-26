@@ -27,7 +27,16 @@ of this repository).  It should look something like this:
 
     {:dev {:env {:database-password "xyzzy"}}}
 
-## Mirroring the PostgreSQL graph to Neo4j
+## Exporting the database
+
+    pg_dump -F c -Z 9 gtr > gtr.backup
+
+This will create a compressed dump.  To restore that dump, you can use the
+following:
+
+    pg_restore -d gtr gtr.backup
+
+## Mirroring the PostgreSQL database to a Neo4j graph
 
     python3 scripts/export_to_neo4j.py
 
