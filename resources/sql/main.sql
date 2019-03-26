@@ -3,8 +3,8 @@
 -- :name insert-person!
 -- :command :insert
 -- :doc Insert a person
-INSERT INTO person (id, first_name, last_name, gender)
-VALUES (:id, :first_name, :last_name, :gender);
+INSERT INTO person (id, first_name, last_name, gender, created_date)
+VALUES (:id, :first_name, :last_name, :gender, :created_date);
 
 -- :name insert-project!
 -- :command :insert
