@@ -11,6 +11,18 @@
 
 (hugsql/def-db-fns "sql/main.sql")
 
+;;; Date functions
+
+(defn domain-timestamp-to-sql-timestamp [dt]
+  (c/to-sql-time dt))
+
+(defn long-epoch-time-to-datetime [et]
+  (c/from-long et))
+
+(defn convert-date [et]
+  (-> et long-epoch-time-to-datetime domain-timestamp-to-sql-timestamp))
+
+
 (defn set-gender-for-first-name [first-name gender]
   (update-gender-for-name! database/db-spec {:first_name first-name
                                              :gender gender}))
@@ -33,6 +45,7 @@
       {:id (str->uuid (:id datum))
        :first_name (:firstName datum)
        :last_name (:surname datum)
+       :created_date (convert-date (:created datum))
        :gender (get gender-lookup first-name)}
       (catch Exception e
         (println "failed to convert a person" datum)))))
@@ -51,18 +64,10 @@
         (println "this person failed" person e)))))
 
 
-(defn domain-timestamp-to-sql-timestamp [dt]
-  (c/to-sql-time dt))
-
-(defn long-epoch-time-to-datetime [et]
-  (c/from-long et))
 
 (defn project->sql [datum]
   {:id (str->uuid (:id datum))
-   :created_date (-> datum
-                     :created
-                     long-epoch-time-to-datetime
-                     domain-timestamp-to-sql-timestamp)
+   :created_date (convert-date (:created datum))
    :title (:title datum)
    :abstract (:abstractText datum)})
 
@@ -147,14 +152,8 @@
   {:id (str->uuid (:id fund))
    :funded_id (str->uuid (get-funded fund))
    :value_pounds (-> fund :valuePounds :amount)
-   :start_date (-> fund
-                   :start
-                   long-epoch-time-to-datetime
-                   domain-timestamp-to-sql-timestamp)
-   :end_date (-> fund
-                 :end
-                 long-epoch-time-to-datetime
-                 domain-timestamp-to-sql-timestamp)})
+   :start_date (convert-date (:start fund))
+   :end_date (convert-date (:end fund))})
 
 (defn query-if-project-exists* [string]
   (-> (query-if-project-exists database/db-spec {:id (str->uuid string)})
